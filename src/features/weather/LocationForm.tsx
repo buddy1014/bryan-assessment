@@ -18,6 +18,8 @@ export default function LocationForm({ submit }: ILocationFormProps) {
   });
 
   const onSubmit = (data: IForecastRequestParams) => {
+    if (!data.latitude || !data.longitude) return;
+
     submit(data);
   };
 
